@@ -9,11 +9,12 @@ public class BasicController {
     @GetMapping("/")
     String hello() {
 
-        return "index.html";
+        return "oneregister.html";
     }
 
 
 
     }
+
 
 
