@@ -23,6 +23,12 @@ public class MemberController {
         return "oneregister.html";
     }
 
+    @GetMapping("/")
+    String testoneregister() {
+        return "oneregister.html";
+    }
+
+
     @PostMapping("/member")
     String register(String displayName,
                     String username,
@@ -48,3 +54,4 @@ public class MemberController {
         }
 
 }
+
