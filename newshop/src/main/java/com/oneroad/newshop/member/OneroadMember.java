@@ -16,7 +16,8 @@ public class OneroadMember {
 
     private String name;
     private String number;
-    private int phone;
+    private String phone;
 
 
 }
+
