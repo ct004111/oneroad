@@ -43,7 +43,7 @@ public class MemberController {
         }
 
         @PostMapping("/onemember")
-        String oneroadMember(String name, String number, int phone){
+        String oneroadMember(String name, String number, String phone){
             OneroadMember onemember = new OneroadMember();
             onemember.setName(name);
             onemember.setNumber(number);
@@ -54,4 +54,5 @@ public class MemberController {
         }
 
 }
+
 
