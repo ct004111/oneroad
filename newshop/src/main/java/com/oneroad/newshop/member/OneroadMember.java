@@ -7,6 +7,7 @@ import lombok.Setter;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 
 @Getter
 @Setter
@@ -23,10 +24,11 @@ public class OneroadMember {
      private LocalDateTime createdAt;
     @PrePersist
     public void prePersist() {
-       this.createdAt = LocalDateTime.now();
+       this.createdAt = LocalDateTime.now(ZoneId.of("Asia/Seoul"));
     }
 
 }
+
 
 
 
