@@ -23,8 +23,9 @@ public class OneroadMember {
      private LocalDateTime createdAt;
     @PrePersist
     public void prePersist() {
-        this.createdAt = LocalDateTime.now();
+        this.createdAt = LocalDateTime.now(ZoneId.of("Asia/Seoul"));
     }
 
 }
+
 
