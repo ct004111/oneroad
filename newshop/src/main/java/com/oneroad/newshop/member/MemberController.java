@@ -37,7 +37,7 @@ public class MemberController {
         member.setPassword(hash);
         member.setDisplayName(displayName);
         memberRepository.save(member);
-        return "redirect:/list";
+        return "redirect:/detail";
         }
 
         @PostMapping("/onemember")
@@ -52,5 +52,6 @@ public class MemberController {
         }
 
 }
+
 
 
