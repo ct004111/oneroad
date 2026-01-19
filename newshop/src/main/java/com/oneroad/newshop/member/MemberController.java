@@ -48,7 +48,8 @@ public class MemberController {
             onemember.setPhone(phone);
             onememberRepository.save(onemember);
 
-            return "redirect:/list";
+            return "redirect:/detail.html";
         }
 
 }
+
