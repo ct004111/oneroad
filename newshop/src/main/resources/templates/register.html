@@ -1,27 +1,125 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+          content="width=device-width, initial-scale=1.0">
+    <title>원로드 회원가입</title>
+
+    <style>
+        /* 전체 기본 스타일 */
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+            Roboto, "Noto Sans KR", Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa, #e4e8f0);
+            min-height: 100vh;
+        }
+
+        /* 가운데 카드 컨테이너 */
+        .container {
+            max-width: 420px;
+            margin: 80px auto;
+            background: #ffffff;
+            padding: 40px 32px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        /* 제목 */
+        .container h4 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 22px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        /* 입력 그룹 */
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        /* 입력창 */
+        .form-group input {
+            width: 100%;
+            padding: 14px 12px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .form-group input::placeholder {
+            color: #aaa;
+        }
+
+        .form-group input:focus {
+            border-color: #4f7cff;
+            box-shadow: 0 0 0 3px rgba(79, 124, 255, 0.15);
+        }
+
+        /* 버튼 */
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            margin-top: 10px;
+            background: #4f7cff;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+        }
+
+        .submit-btn:hover {
+            background: #3b66e6;
+        }
+
+        .submit-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* 작은 안내 텍스트 */
+        .footer-text {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 13px;
+            color: #777;
+        }
+    </style>
 </head>
+
 <body>
 
 <div th:replace="~{ nav.html::navbar }"></div>
 
-<h4>원로드 임시 가입</h4>
+<div class="container">
+    <h4>원로드 임시 가입</h4>
 
-<form action = "/member" method = "post">
-    <input name = "displayName" placeholder = "이름">
-    <br>
-    <input name = "username" placeholder = "아이디">
-    <br>
-    <input name = "password" type = "password" placeholder = "비밀번호">
-    <br>
-    <button type = "submit">전송하기</button>
-</form>
+    <form action="/member" method="post">
+        <div class="form-group">
+            <input name="displayName" placeholder="이름" required>
+        </div>
+
+        <div class="form-group">
+            <input name="username" placeholder="아이디" required>
+        </div>
+
+        <div class="form-group">
+            <input name="password" type="password" placeholder="비밀번호" required>
+        </div>
+
+        <button type="submit" class="submit-btn">가입하기</button>
+    </form>
+
+    <div class="footer-text">
+        원로드 서비스 이용을 위한 간편 가입입니다.
+    </div>
+</div>
+
 </body>
-
 </html>
